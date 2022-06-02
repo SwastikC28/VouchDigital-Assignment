@@ -18,6 +18,7 @@ exports.getAddresses = asyncHandler(async (req, res, next) => {
   query = query.skip(startIndex).limit(limit);
 
   const result = await query;
+
   res
     .status(200)
     .json({ success: true, currPage: page, count: result.length, result });
